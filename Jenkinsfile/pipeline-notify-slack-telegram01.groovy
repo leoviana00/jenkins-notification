@@ -92,8 +92,13 @@ node {
   }
 
   // Enviar notificação
+<<<<<<< HEAD
   slackSend (color: colorCode, message: subject)
   telegramSend(message: "${buildStatus}\nNome do Job: '${env.JOB_NAME}'\nNúmero do Build: [#${env.BUILD_NUMBER}]",chatId:-493170702)
+=======
+  slackSend (color: colorCode, message: summary)
+  telegramSend(message: "${buildStatus}\nNome do Job: '${env.JOB_NAME}'\nNúmero do Build: [#${env.BUILD_NUMBER}]\n(${env.BUILD_URL}consoleText)",chatId:${chattIdTelegram})
+>>>>>>> ee9dd19df99d02eb48724ead9a8cb0223ed20514
   
      
     
