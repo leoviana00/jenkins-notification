@@ -54,7 +54,6 @@ node {
     color = 'RED'
     colorCode = '#FF0000'
   }
-  
    slackSend (color: colorCode, message: subject)
    telegramSend(message: "${buildStatus}\nNome do Job: '${env.JOB_NAME}'\nNúmero do Build: [#${env.BUILD_NUMBER}]",chatId:${chat_id})   
 }
