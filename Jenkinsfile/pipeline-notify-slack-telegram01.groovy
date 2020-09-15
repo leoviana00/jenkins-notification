@@ -17,7 +17,7 @@ node {
         
         catch(Exception error) {
         // Enviar notificação em caso de falha
-        telegramSend(message: "${env.BUILD_URL}consoleText\nErro na stage: Clonar repositório :"+error ,chatId:-493170702)
+        telegramSend(message: "${env.BUILD_URL}consoleText\nErro na stage: Clonar repositório :"+error ,chatId:${chat_id})
         slackSend (message: "${env.BUILD_URL}consoleText\nErro na stage: Clonar repositório :"+error)
         error "Exception occurred, aborting"
         }
@@ -34,7 +34,7 @@ node {
         
         catch(Exception error) {
         // Enviar notificação em caso de falha
-        telegramSend(message: "${env.BUILD_URL}consoleText\nErro na stage: Build com Maven :"+error,chatId:-493170702)
+        telegramSend(message: "${env.BUILD_URL}consoleText\nErro na stage: Build com Maven :"+error,chatId:${chat_id})
         slackSend (message: "${env.BUILD_URL}consoleText\nErro na stage:  Build com Maven :"+error)
         error "Exception occurred, aborting"
         }
@@ -51,12 +51,12 @@ node {
         
         catch(Exception error) {
         // Enviar notificação em caso de falha
-        telegramSend(message: "${env.BUILD_URL}consoleText\nErro na stage: Testes com o Maven :"+error,chatId:-493170702)
+        telegramSend(message: "${env.BUILD_URL}consoleText\nErro na stage: Testes com o Maven :"+error,chatId:${chat_id})
         slackSend (message: "${env.BUILD_URL}consoleText\nErro na stage:  Testes com o Maven :"+error)
         error "Exception occurred, aborting"
         }
         // Enviar notificação ede status ok
-        telegramSend(message: "Stage: Teste com o Maven\nStatus:OK" ,chatId:-493170702)
+        telegramSend(message: "Stage: Teste com o Maven\nStatus:OK" ,chatId:${chat_id})
         slackSend (message: "Stage: Teste com o maven\nStatus:OK")
 
   } catch (e) {
@@ -94,7 +94,7 @@ node {
   // Enviar notificação
 <<<<<<< HEAD
   slackSend (color: colorCode, message: subject)
-  telegramSend(message: "${buildStatus}\nNome do Job: '${env.JOB_NAME}'\nNúmero do Build: [#${env.BUILD_NUMBER}]",chatId:-493170702)
+  telegramSend(message: "${buildStatus}\nNome do Job: '${env.JOB_NAME}'\nNúmero do Build: [#${env.BUILD_NUMBER}]",chatId:-${chat_id})
 =======
   slackSend (color: colorCode, message: summary)
   telegramSend(message: "${buildStatus}\nNome do Job: '${env.JOB_NAME}'\nNúmero do Build: [#${env.BUILD_NUMBER}]\n(${env.BUILD_URL}consoleText)",chatId:${chattIdTelegram})
