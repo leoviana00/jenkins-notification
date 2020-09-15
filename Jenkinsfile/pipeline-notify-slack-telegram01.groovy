@@ -17,12 +17,12 @@ node {
         
         catch(Exception error) {
         // Enviar notificação em caso de falha
-        telegramSend(message: "Erro na stage: Clonar repositório :"+error ,chatId:${chattIdTelegram})
-        slackSend (message: "Erro na stage: Clonar repositório :"+error)
+        telegramSend(message: "${env.BUILD_URL}consoleText\nErro na stage: Clonar repositório :"+error ,chatId:-493170702)
+        slackSend (message: "${env.BUILD_URL}consoleText\nErro na stage: Clonar repositório :"+error)
         error "Exception occurred, aborting"
         }
         // Enviar notificação de status ok
-        telegramSend(message: "Stage: Clonar repositório\nStatus:OK" ,chatId:chatId:${chattIdTelegram})
+        telegramSend(message: "Stage: Clonar repositório\nStatus:OK" ,chatId:-493170702)
         slackSend (message: "Stage: Clonar repositório\nStatus:OK")
         
         try{
@@ -34,12 +34,12 @@ node {
         
         catch(Exception error) {
         // Enviar notificação em caso de falha
-        telegramSend(message: "Erro na stage: Build com Maven :"+error,chatId:chatId:${chattIdTelegram})
-        slackSend (message: "Erro na stage:  Build com Maven :"+error)
+        telegramSend(message: "${env.BUILD_URL}consoleText\nErro na stage: Build com Maven :"+error,chatId:-493170702)
+        slackSend (message: "${env.BUILD_URL}consoleText\nErro na stage:  Build com Maven :"+error)
         error "Exception occurred, aborting"
         }
         // Enviar notificação ede status ok
-        telegramSend(message: "Stage: Build com o Maven\nStatus:OK" ,chatId:chatId:${chattIdTelegram})
+        telegramSend(message: "Stage: Build com o Maven\nStatus:OK" ,chatId:-493170702)
         slackSend (message: "Stage: Build com o Maven\nStatus:OK")
         
         try{
@@ -51,12 +51,12 @@ node {
         
         catch(Exception error) {
         // Enviar notificação em caso de falha
-        telegramSend(message: "Erro na stage: Testes com o Maven :"+error,chatId:chatId:${chattIdTelegram})
-        slackSend (message: "Erro na stage:  Testes com o Maven :"+error)
+        telegramSend(message: "${env.BUILD_URL}consoleText\nErro na stage: Testes com o Maven :"+error,chatId:-493170702)
+        slackSend (message: "${env.BUILD_URL}consoleText\nErro na stage:  Testes com o Maven :"+error)
         error "Exception occurred, aborting"
         }
         // Enviar notificação ede status ok
-        telegramSend(message: "Stage: Teste com o Maven\nStatus:OK" ,chatId:chatId:${chattIdTelegram})
+        telegramSend(message: "Stage: Teste com o Maven\nStatus:OK" ,chatId:-493170702)
         slackSend (message: "Stage: Teste com o maven\nStatus:OK")
 
   } catch (e) {
@@ -92,8 +92,8 @@ node {
   }
 
   // Enviar notificação
-  slackSend (color: colorCode, message: summary)
-  telegramSend(message: "${buildStatus}\nNome do Job: '${env.JOB_NAME}'\nNúmero do Build: [#${env.BUILD_NUMBER}]\n(${env.BUILD_URL}consoleText)",chatId:-493170702)
+  slackSend (color: colorCode, message: subject)
+  telegramSend(message: "${buildStatus}\nNome do Job: '${env.JOB_NAME}'\nNúmero do Build: [#${env.BUILD_NUMBER}]",chatId:-493170702)
   
      
     
