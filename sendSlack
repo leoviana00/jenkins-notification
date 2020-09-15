@@ -1,0 +1,1 @@
+slackSend color: '#BADA55', message: 'OLÁ', channel: '#fiscal'
