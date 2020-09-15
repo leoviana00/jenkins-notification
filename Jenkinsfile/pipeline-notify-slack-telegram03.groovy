@@ -25,7 +25,7 @@ node {
   } catch (Exception error) {
     // If there was an exception thrown, the build failed
     currentBuild.result = "FAILED"
-    telegramSend(message: "Stage: ${LAST_STAGE_NAME}\n${env.BUILD_URL}consoleText\nErro :"+error,chatId:-493170702)
+    telegramSend(message: "Stage: ${LAST_STAGE_NAME}\n${env.BUILD_URL}consoleText\nErro :"+error,chatId:${chat_id})
     slackSend (message: "Stage: ${LAST_STAGE_NAME}\n${env.BUILD_URL}consoleText\nErro :"+error)
     error "Exception occurred, aborting"
     throw error
@@ -56,5 +56,5 @@ node {
   }
   
    slackSend (color: colorCode, message: subject)
-   telegramSend(message: "${buildStatus}\nNome do Job: '${env.JOB_NAME}'\nNúmero do Build: [#${env.BUILD_NUMBER}]",chatId:-493170702)   
+   telegramSend(message: "${buildStatus}\nNome do Job: '${env.JOB_NAME}'\nNúmero do Build: [#${env.BUILD_NUMBER}]",chatId:${chat_id})   
 }
