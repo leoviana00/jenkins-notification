@@ -2,6 +2,5 @@ script{
                     withCredentials([string(credentialsId: 'telegramToken', variable: 'TOKEN'),
                     string(credentialsId: 'telegramChatId', variable: 'CHAT_ID')]) {
                     sh 'curl -s -X POST https://api.telegram.org/bot${TOKEN}/sendMessage -d chat_id=${CHAT_ID} -d parse_mode="HTML" -d text="<b>Build com Maven</b>: Finalizado \
-                      <b>Status </b> : OK "'
-                      
+                      <b>Status </b> : OK "'               
                 }
