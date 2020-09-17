@@ -56,6 +56,5 @@ node {
   }
   
    slackSend (color: colorCode, message: summary)
-   telegramSend(message: "${buildStatus}\nNome do Job: '${env.JOB_NAME}'\nNúmero do Build: [#${env.BUILD_NUMBER}]\n(${env.BUILD_URL}consoleText)",chatId:${chattIdTelegram})
-     
+   telegramSend(message: "${buildStatus}\nNome do Job: '${env.JOB_NAME}'\nNúmero do Build: [#${env.BUILD_NUMBER}]\n(${env.BUILD_URL}consoleText)",chatId:${chattIdTelegram})     
 }
