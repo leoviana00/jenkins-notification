@@ -1,1 +1,2 @@
+# Envio de notificação ao canal do SLACK
 slackSend color: '#BADA55', message: 'OLÁ', channel: '#fiscal'
