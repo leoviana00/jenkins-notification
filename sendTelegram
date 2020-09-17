@@ -1,0 +1,2 @@
+# Enviar notificações ao telegram
+telegramSend(message: "${buildStatus}\nNome do Job: '${env.JOB_NAME}'\nNúmero do Build: [#${env.BUILD_NUMBER}]",chatId:${chat_id})
