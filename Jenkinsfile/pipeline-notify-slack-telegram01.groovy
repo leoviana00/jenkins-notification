@@ -1,3 +1,4 @@
+// SendNotification, utilizando 1 Try Catch por stage
 node {
     try {
         
