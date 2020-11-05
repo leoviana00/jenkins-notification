@@ -1,3 +1,4 @@
+// SendNotifications utilizando um único try catch, tratando somente do resultado final do build, sem notificações sobre status das stages
 node {
     try {
         
