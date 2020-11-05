@@ -1,3 +1,4 @@
+//Bloco de script para envio de notificação para telegram através do curl
 script{
                     withCredentials([string(credentialsId: 'telegramToken', variable: 'TOKEN'),
                     string(credentialsId: 'telegramChatId', variable: 'CHAT_ID')]) {
