@@ -1,4 +1,4 @@
-
+// SendNotification utilizando um único try catch pegando o status dos stages através de uma variável global
 def LAST_STAGE_NAME = ''
 node {
     try {        
