@@ -19,7 +19,7 @@ node {
       
         stage ('Testes com o Maven'){
             LAST_STAGE_NAME = 'Testes com o Maven'
-            sh 'mvnn test'     
+            sh 'mvn test'     
         } 
              
   } catch (Exception error) {
